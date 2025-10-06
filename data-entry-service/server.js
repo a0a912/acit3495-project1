@@ -7,7 +7,7 @@ app.use(express.json());
 // simple MySQL pool; reads password from .env via compose
 const pool = await mysql.createPool({
   host: 'mysql', port: 3306,
-  user: 'root', password: process.env.MYSQL_PASSWORD || 'rootpw',
+  user: 'root', password: process.env.MYSQL_PASSWORD || 'password',
   database: 'weather_db', waitForConnections: true
 });
 

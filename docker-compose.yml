@@ -20,6 +20,16 @@ services:
     ports:
       - "27017:27017"
 
+  data-entry:
+    build: ./data-entry-service
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    ports:
+      - "5001:3000"
+
+
 volumes:
   mysql-data:
   mongo-data:
